@@ -23,7 +23,7 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
         RootBeanDefinition rootBeanDefinition = new RootBeanDefinition(SMSEntity.class);
         beanDefinitionRegistry.registerBeanDefinition("smsEntity",rootBeanDefinition);
 
-
+        //FactoryBean(往IOC容器存储对象 注入对象) BeanFactory  ( 总IOC工厂获取bean对象)
     }
 }
 

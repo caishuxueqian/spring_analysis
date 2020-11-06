@@ -1,6 +1,7 @@
 package com.jiyu.v3;
 
 import com.jiyu.v3.config.MyConfig;
+import com.jiyu.v3.entity.MyEntity;
 import com.jiyu.v3.entity.Win10Entity;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -15,5 +16,8 @@ public class V3SpringTest {
             System.out.println(beanDefinitionNames[i]);
         }
 
+        MyEntity myEntity1 = (MyEntity) annotationConfigApplicationContext.getBean("myFactoryBean");
+        MyEntity myEntity2 = (MyEntity) annotationConfigApplicationContext.getBean("myFactoryBean");
+        System.out.println(myEntity1 == myEntity2);
     }
 }

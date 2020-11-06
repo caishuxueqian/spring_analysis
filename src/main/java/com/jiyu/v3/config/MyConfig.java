@@ -26,4 +26,9 @@ public class MyConfig {
      * bean注解注册的bean的id是方法名称 @Import以当前类完整路径地址注册 相比来说@Import注入更加简单
      * 共同点：都是引入外部的jar包
      */
+    @Bean
+    public MyFactoryBean myFactoryBean(){
+        return new MyFactoryBean();
+    }
+
 }
