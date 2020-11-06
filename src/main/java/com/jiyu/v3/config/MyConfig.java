@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Import;
 
 @EnablePayEntity
 @Configuration
-@Import(Win10Entity.class)
+@Import({Win10Entity.class,MyImportBeanDefinitionRegistrar.class})
 public class MyConfig {
 
     /**
