@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-
+@EnablePayEntity
 @Configuration
 @Import(Win10Entity.class)
 public class MyConfig {

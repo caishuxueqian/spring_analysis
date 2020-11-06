@@ -10,5 +10,10 @@ public class V3SpringTest {
         Win10Entity win10Entity = (Win10Entity) annotationConfigApplicationContext.getBean("com.jiyu.v3.entity.Win10Entity");
         System.out.println(win10Entity);
 
+        String[] beanDefinitionNames = annotationConfigApplicationContext.getBeanDefinitionNames();
+        for (int i = 0; i <beanDefinitionNames.length ; i++) {
+            System.out.println(beanDefinitionNames[i]);
+        }
+
     }
 }
