@@ -23,4 +23,40 @@
          *    id: 方法名userEntity
          *    class：UserEntity
          */
+ 
+ ## 2.9 假设一个接口下有两个实现类，这时候使用@Autowired获取的时候会有什么问题？怎么解决？
+ > /**
+    * 假设一个接口下有两个实现类，这时候使用@Autowired获取的时候
+    * UserService
+    * UserService001Impl
+    * UserService002Impl
+    * 
+    * @Autowired
+    * UserService
+    * 
+    * 因为@Autowired默认的情况下使用 类型查找
+    * SpringBoot 多数据源 设置默认的时候（优先级）@Primary
+    */
+    
+    
+    解决办法有三种：
+         1、
+         
+           @Resource(name = "userService001Impl")
+           private UserService userService;
+       
+         
+         2、
+          @Autowired
+          @Qualifier("userService002Impl")      
+          private UserService userService;
+        
+         3、    
+          @Autowired 
+          private UserService userService;
+          
+          //在实现类加上@Primary注解
+          @Primary
+          UserService001Impl
+          
           
